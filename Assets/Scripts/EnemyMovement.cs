@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour {
 
@@ -27,8 +25,7 @@ public class EnemyMovement : MonoBehaviour {
         return transform.localScale.x > 0;
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
+    private void OnTriggerExit2D(Collider2D collision) {
         transform.localScale = new Vector2(-Mathf.Sign(myRigidBody2D.velocity.x), 1f);
     }
 

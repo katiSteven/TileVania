@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 
 public class Player : MonoBehaviour {
@@ -9,9 +7,10 @@ public class Player : MonoBehaviour {
     [SerializeField] float runSpeed = 5f;
     [SerializeField] float jumpSpeed = 5f;
     [SerializeField] float climbSpeed = 5f;
+    [SerializeField] Vector2 deathKick = new Vector2(25f, 25f);
 
     //state
-    private readonly bool isAlive = true;
+    bool isAlive = true;
     float gravityScaleAtStart;
 
     //cached component references
@@ -29,12 +28,14 @@ public class Player : MonoBehaviour {
         gravityScaleAtStart = myRigidBody2D.gravityScale;
     }
 	
-	// Update is called once per frame
 	void Update () {
+        if ( ! isAlive) { return; }
+
         Run();
         Jump();
         FlipSprite();
         ClimbLadder();
+        Die();
     }
 
     private void Run() {
@@ -81,6 +82,18 @@ public class Player : MonoBehaviour {
         //    myAnimator.SetBool("Climbing", playerHasVerticalSpeed);
         //}
         //else { myAnimator.SetBool("Climbing", false); }
+    }
+
+    private void Die() {
+        if (myBodyCollider2D.IsTouchingLayers(LayerMask.GetMask("Enemy","Hazards"))) {
+            isAlive = false;
+            myAnimator.SetTrigger("Dying");
+            //float enemyDirection = Mathf.Sign(myBodyCollider2D.IsTouching());
+            GetComponent<Rigidbody2D>().velocity = deathKick;
+            //GetComponent<Rigidbody2D>().velocity = new Vector2(Mathf.Sign(transform.localScale.x) * deathKick.x, deathKick.y);
+            //Mathf.Sign(myRigidBody2D.velocity.x)
+            FindObjectOfType<GameSession>().ProcessPlayerDeath();
+        }
     }
 
     private void FlipSprite() {
