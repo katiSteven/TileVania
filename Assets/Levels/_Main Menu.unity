@@ -722,7 +722,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4142285121462506, guid: 85637ae1e7ad5e041a76d231040bde9d, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -22.829817
+      value: -0.8298166
       objectReference: {fileID: 0}
     - target: {fileID: 4528708905931706, guid: 85637ae1e7ad5e041a76d231040bde9d, type: 2}
       propertyPath: m_LocalPosition.y
@@ -730,21 +730,34 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4142285121462506, guid: 85637ae1e7ad5e041a76d231040bde9d, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -9.857231
+      value: -2.8572307
       objectReference: {fileID: 0}
     - target: {fileID: 20823558593739306, guid: 85637ae1e7ad5e041a76d231040bde9d,
         type: 2}
       propertyPath: far clip plane
-      value: 15
+      value: 5000
       objectReference: {fileID: 0}
     - target: {fileID: 20823558593739306, guid: 85637ae1e7ad5e041a76d231040bde9d,
         type: 2}
       propertyPath: orthographic size
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4142285121462506, guid: 85637ae1e7ad5e041a76d231040bde9d, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -9.69614
+      value: 0.30385944
+      objectReference: {fileID: 0}
+    - target: {fileID: 4708473782687910, guid: 85637ae1e7ad5e041a76d231040bde9d, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -22
+      objectReference: {fileID: 0}
+    - target: {fileID: 4708473782687910, guid: 85637ae1e7ad5e041a76d231040bde9d, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -7.0000005
+      objectReference: {fileID: 0}
+    - target: {fileID: 114697325681218138, guid: 85637ae1e7ad5e041a76d231040bde9d,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85637ae1e7ad5e041a76d231040bde9d, type: 2}
@@ -23183,7 +23196,7 @@ Tilemap:
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Origin: {x: -25, y: -10, z: 0}
-  m_Size: {x: 68, y: 37, z: 1}
+  m_Size: {x: 68, y: 44, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
